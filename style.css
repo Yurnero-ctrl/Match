@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: #0f0f0f;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*Estilização da Nav  */
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #000000;
+    height: 7vh;
+    padding: 0.25rem 0.75rem;
+}
+
+nav a{
+    color: #fe3061;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav #logo {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+}
+
+nav a:hover{
+    opacity: 0.7;
+}
+
+nav .layout-list{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+nav .layout-list li{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+nav .layout-list li a {
+    text-decoration: none;
+}
+
+nav .layout-list.active{
+    transform: translateX(0);
+}
+
+nav li{
+    background-color: #000000;
+    border-color: white;
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    color: #616161;
+    font-size: 1.5rem;
+}
+
+li:hover{
+    background-color: #FBCAFF;
+    color: #FBCAFF;
+}
+
+/*Content do login*/
+
+.login-content{
+    background-color: #FBCAFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    border-radius: 1.5rem;
+}
+
+h1{
+    color: #000000;
+    text-align: center;
+    padding: 1rem;
+}
+
+h2{
+    color: #616161;
+    text-align: center;
+    padding: 1rem;
+}
+
+input{
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    background-color: #FBCAFF;
+    border-color: #9c9a9c;
+}
+
+button{
+    background-color: #FBCAFF;
+    border-color: white;
+    padding: 0.6rem;
+    width: 100%;
+    border-radius: 1.5rem;
+    color: #616161;
+    font-size: 1.5rem;
+}
+
+button:hover{
+    background-color: #fe3061;
+    color: #FBCAFF;
+}
+
+/*Animação*/
+
+span{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+    animation: fadeInOut 1s linear infinite;
+}
+@keyframes fadeInOut{
+0%,100%{
+    opacity: 0;
+}
+    20%, 80%
+{
+    opacity: 1;
+}
+}
+
+span::before
+{
+content: '';
+position: absolute;
+width: 100%;
+height: 100%;
+background: url(heart.png);
+background-size: cover;
+animation: moveShape 1s linear infinite;
+}
+
+@keyframes moveShape{
+    0%
+    {
+        transform: translate(0) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(300px) rotate(360deg);
+    }
+}
